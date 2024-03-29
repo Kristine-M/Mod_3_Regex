@@ -16,19 +16,24 @@ import re
 def tag_products(descriptions):
     tagged = []
 
-    # Define regex patterns for each category
-    electronics_pattern = r"(Smartphone|tv|laptop|headphones)"
-    apparel_pattern = r"(t-shirt|dress|shorts|leggings|socks)"
-    home_kitchen_pattern = r"(cutlery|spoon|cookware|knife)"
+    electronics = r"(Smartphone|tv|laptop|headphones)"
+    apparel = r"(t-shirt|dress|shorts|leggings|socks)"
+    home_kitchen = r"(cutlery|spoon|cookware|knife)"
 
     # Iterate through each product description
     for word in descriptions:
         # Match keywords in the description using regex
-        if re.search(electronics_pattern, word):
+        if re.search(electronics, word):
+            
             tagged.append((word, "Electronics"))
-        elif re.search(apparel_pattern, word):
+            
+        elif re.search(apparel, word):
+            
             tagged.append((word, "Apparel"))
-        elif re.search(home_kitchen_pattern, word):
+            
+        elif re.search(home_kitchen, word):
+            
+            
             tagged.append((word, "Home & Kitchen"))
         
 
