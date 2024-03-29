@@ -4,6 +4,11 @@
 # the description. For instance, tag products as 'Electronics', 'Apparel', or 'Home & Kitchen' 
 # based on relevant keywords found in their descriptions.
 
+descriptions = [
+    "Smartphone with 6-inch screen and 128GB memory",
+    "Cotton t-shirt in medium size",
+    "Stainless steel kitchen knife set"
+]
 
 # # Tag each product based on keywords in the description
 
@@ -39,13 +44,6 @@ def tag_products(descriptions):
 
     return tagged
 
-
-descriptions = [
-    "Smartphone with 6-inch screen and 128GB memory",
-    "Cotton t-shirt in medium size",
-    "Stainless steel kitchen knife set"
-]
-
 tagged_products = tag_products(descriptions)
 
 for product, category in tagged_products:
@@ -58,11 +56,10 @@ for product, category in tagged_products:
 # international e-commerce site. Standardize all prices to the 
 # format 'USD XX.XX', converting from formats like '$XX.XX', 'XX.XX USD', and 'XX.XX$'.
 
+price_data = "Items cost $15.99, 20.00 USD, and 7.50$."
 
 # Convert all price formats in the string to a standardized 'USD XX.XX' format.
 # Use re.sub() to perform the necessary replacements and format transformations.
-
-price_data = "Items cost $15.99, 20.00 USD, and 7.50$."
 
 def standard_pricing(price_data):
    
@@ -71,8 +68,6 @@ def standard_pricing(price_data):
     data = re.sub(pattern, r'USD \1', price_data)
 
     return data
-
-price_data = "Items cost $15.99, 20.00 USD, and 7.50$."
 
 prices = standard_pricing(price_data)
 print(prices)
